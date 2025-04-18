@@ -47,13 +47,6 @@ function [ B_, STT_, SP_ ] = DNN( N_, Q_, B_, STT_, SP_ )
                                                                                                                                                                         for jaj = STT_(10):1:N_-10
                                                                                                                                                                             for jai = STT_(9):1:N_-9
                                                                                                                                                                                 for jah = STT_(8):1:N_-8
-
-                                                                                                                                                                                    [ B_ ] = bitCoffee( jah, B_, SP_ );
-
-                                                                                                                                                                                    if( sum(B_) == Q_ )
-                                                                                                                                                                                    
-                                                                                                                                                                                        return
-                                                                                                                                                                                    end
                                                                                                                                                                                     
                                                                                                                                                                                     for jag = STT_(7):1:N_-7
 
