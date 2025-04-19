@@ -1,5 +1,4 @@
 function  [ B_ ] = bitCoffee( J_, B_, SP_ )
-
     
     if (   B_(J_) && ~SP_(B_(J_),J_) && ~B_(J_+1) && ~SP_(B_(J_),J_+1)   )                                                                                                                                                                                             
     
