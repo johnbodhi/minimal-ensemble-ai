@@ -22,9 +22,7 @@ for Q = ceil(N/2):-1:1
 
         % B(4,:) = permn([1;0],N-1,T); T = T - 1; % Slow...
 
-        B(2,:) = monteCarlo(N,EMAX);
-
-        [ B(3,:), ~, STT, SP ] = DNN( N, Q, B(3,:), STT, SP );
+        % B(2,:) = monteCarlo(N,EMAX);        
 
         % M = (0:1:MOD)';
 
@@ -42,24 +40,22 @@ for Q = ceil(N/2):-1:1
 
         if ( A )
 
-            [ B, ~, STT, SP ] = allocate( N, Q, MOD, B );
-        end    
+            [ ~, B, STT, SP ] = allocate( Q, MOD, B );
+        end        
 
-        
+        [ B(3,:), STT, SP ] = DNN( N, Q, B(3,:), STT, SP );
 
         if ( A )
 
-           [ ~, F, ~, ~ ] = allocate( N, Q, MOD, B ); A = 0;
+           [ F, ~, ~, ~ ] = allocate( Q, MOD, B ); A = 0;
         end
 
         [ F ] = histogram( B, F );
 
         if( sum(B(1,:)) < ceil(N/2) && sum(B(2,:)) < ceil(N/2) && sum(B(3,:)) < ceil(N/2) )
     
-            S_(2) = pAdicDT( N, B, RA, RS, F );
+            [ F ] = pAdicDT( N, B, RA, RS, F );
         end
-        
-        [ H_, S_ ] = sol( S_ );
     
     end
     P = 0;

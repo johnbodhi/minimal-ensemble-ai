@@ -1,12 +1,12 @@
-function  [ B_ ] = bitCoffee( J_, B_, SP_ )
+function  [ B_, SP_ ] = bitCoffee( J_, B_, SP_ )
     
-    if (   B_(J_) && ~SP_(B_(J_),J_) && ~B_(J_+1) && ~SP_(B_(J_),J_+1)   )                                                                                                                                                                                             
+    if (   B_(J_) && ~SP_(B_(J_),J_) && ~B_(J_-1) && ~SP_(B_(J_),J_-1)   )                                                                                                                                                                                             
     
         B_(J_+1) = B_(J_);
         
         B_(J_)   = 0;
     
-    elseif ( B_(J_) && SP_(B_(J_),J_) && ~B_(J_+1) && ~SP_(B_(J_),J_+1)  )                                                                                                                                                                                                                      
+    elseif ( B_(J_) && SP_(B_(J_),J_) && ~B_(J_-1) && ~SP_(B_(J_),J_-1)  )                                                                                                                                                                                                                      
     
         B_(J_+1  )          = B_(J_);  
         
@@ -16,13 +16,13 @@ function  [ B_ ] = bitCoffee( J_, B_, SP_ )
         
         B_(J_)              = 0;                                                                                                                                                                                                                                                                                                                                                                          
                                                                                                                                  
-    elseif ( B_(J_) && ~SP_(B_(J_),J_) && B_(J_+1) && ~SP_(B_(J_),J_+1)  )
+    elseif ( B_(J_) && ~SP_(B_(J_),J_) && B_(J_-1) && ~SP_(B_(J_),J_-1)  )
     
         SP_( B_(J_), J_+1 ) = SP_( B_(J_), J_+1 ) + 1;                                                                                                                                                                                      
         
         B_(J_)              = 0;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     
-    elseif ( B_(J_) && SP_(B_(J_),J_) && B_(J_+1) && ~SP_(B_(J_),J_+1)   )
+    elseif ( B_(J_) && SP_(B_(J_),J_) && B_(J_-1) && ~SP_(B_(J_),J_-1)   )
     
         SP_( B_(J_), J_+1 ) = SP_( B_(J_), J_+1 ) + 1;   
         
@@ -30,20 +30,26 @@ function  [ B_ ] = bitCoffee( J_, B_, SP_ )
         
         SP_( B_(J_), J_ )   = SP_( B_(J_), J_   ) - 1;                                                                                                                                                                                                     
     
-    elseif ( B_(J_) && ~SP_(B_(J_),J_) && B_(J_+1) && SP_(B_(J_),J_+1)   )
+    elseif ( B_(J_) && ~SP_(B_(J_),J_) && B_(J_-1) && SP_(B_(J_),J_-1)   )
     
         SP_(B_(J_),J_+1) = SP_(B_(J_+1),J_+1) + 1;
         
         B_(J_)           = 0;
     
-    elseif ( B_(J_) && SP_(B_(J_),J_) && B_(J_+1) && SP_(B_(J_),J_+1)    ) 
+    elseif ( B_(J_) && SP_(B_(J_),J_) && B_(J_-1) && SP_(B_(J_),J_-1)    ) 
     
         B_(J_)              = SP( B_(J_), J_ );
         
         SP_( B_(J_), J_  )  = SP_( B_(J_), J_   ) - 1;
         
-        SP_( B_(J_), J_+1 ) = SP_( B_(J_), J_+1 ) + 1;                                                                                                                                                                                                              
-    
-    end
+        SP_( B_(J_), J_+1 ) = SP_( B_(J_), J_+1 ) + 1;
 
-end
+    elseif ( ~B_(J_) && SP_( 1, J_) && ~B_(J_-1) && ~SP_( 1, J_-1)    ) 
+    
+        B_(J_)               = SP_( B_(J_-1), J_);
+        
+        SP_( B_(J_-1), J_  ) = SP_( B_(J_), J_) - 1;
+        
+    end
+    
+    
