@@ -26,9 +26,9 @@ function  [ B_, SP_ ] = bitCoffee( J_, B_, SP_ )
     
         SP_( B_(J_), J_ )     = SP_( B_(J_), J_ ) + 1;   
         
-        B_( J_-1)             = SP_(B_(J_-1),J_-1);
+        B_( J_-1)             = SP_(B_(J_-1),J_-1 );
         
-        SP_( B_(J_-1), J_-1 ) = SP_( B_(J_-1), J_-1) - 1;                                                                                                                                                                                                     
+        SP_( B_(J_-1), J_-1 ) = SP_( B_(J_-1), J_-1 ) - 1;                                                                                                                                                                                                     
     
     elseif ( B_(J_-1) && ~SP_(B_(J_-1),J_-1) && B_(J_) && SP_(B_(J_),J_)   )
     
@@ -40,7 +40,7 @@ function  [ B_, SP_ ] = bitCoffee( J_, B_, SP_ )
     
         B_(J_-1)                = SP( B_(J_-1), J_-1 );
         
-        SP_( B_(J_-1), J_-1  )  = SP_( B_(J_-1), J_ -1 ) - 1;
+        SP_( B_(J_-1), J_-1  )  = SP_( B_(J_-1), J_-1 ) - 1;
         
         SP_( B_(J_), J_ )       = SP_( B_(J_), J_ ) + 1;
 
