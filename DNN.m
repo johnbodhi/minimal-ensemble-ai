@@ -438,7 +438,7 @@ function [ B_, STT_, SP_ ] = DNN( N_, Q_, B_, STT_, SP_ )
         %                                                                                                                                                                                                     return
         %                                                                                                                                                                                                 end
 
-                                                                                                                                                                                                        % for jab = STT_(2):1:N_-3
+                                                                                                                                                                                                        % for jab = STL_(2):1:STU_(2)
                                                                                                                                                                                                         % 
                                                                                                                                                                                                         %     [ B_, SP_ ] = bitCoffee( jab, B_, SP_ );
                                                                                                                                                                                                         % 
@@ -447,7 +447,7 @@ function [ B_, STT_, SP_ ] = DNN( N_, Q_, B_, STT_, SP_ )
                                                                                                                                                                                                         %         return
                                                                                                                                                                                                         %     end
                                                                                                                                                                                                         % 
-                                                                                                                                                                                                            for jaa = STT_(1):1:N_-1
+                                                                                                                                                                                                            for jaa = STL_(1):1:STU_(1)
 
                                                                                                                                                                                                                 [ B_, SP_ ] = bitCoffee( jaa, B_, SP_ );
 
