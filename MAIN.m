@@ -43,7 +43,7 @@ for Q = ceil(N/2):-1:1
             [ ~, B, STT, SP ] = allocate( Q, MOD, B );
         end        
 
-        [ B(3,:), STT, SP ] = DNN( N, Q, B(3,:), STT, SP );
+        [ B(3,:), STL, STU, SP ] = DNN( N, Q, B(3,:), STL, STU, SP );
 
         if ( A )
 

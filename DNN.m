@@ -1,4 +1,4 @@
-function [ B_, STT_, SP_ ] = DNN( N_, Q_, B_, STT_, SP_ )
+function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
 
         INF = 10; SUP = 10; C = zeros(1,INF+SUP+N_);
 

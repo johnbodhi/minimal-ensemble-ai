@@ -19,6 +19,6 @@ function [ F_, B_, STT_, SP_ ] = allocate( Q_, MOD_, B_ )
     
     B_( 3, Q_ ) = 0;
 
-    [ B_(3,1:Q_) ] = permn( (MOD_:-1:0)', Q_, 1 );
+    B_(3,1:Q_)  = permn( (MOD_:-1:0)', Q_, 1 );
 
 end
