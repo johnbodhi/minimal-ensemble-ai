@@ -437,16 +437,16 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
         % 
         %                                                                                                                                                                                                     return
         %                                                                                                                                                                                                 end
-
-                                                                                                                                                                                                        % for jab = STL_(2):1:STU_(2)
-                                                                                                                                                                                                        % 
-                                                                                                                                                                                                        %     [ B_, SP_ ] = bitCoffee( jab, B_, SP_ );
-                                                                                                                                                                                                        % 
-                                                                                                                                                                                                        %     if( sum(B_) == Q_ )
-                                                                                                                                                                                                        % 
-                                                                                                                                                                                                        %         return
-                                                                                                                                                                                                        %     end
-                                                                                                                                                                                                        % 
+        %
+        %                                                                                                                                                                                                 for jab = STL_(2):1:STU_(2)
+        %                                                                                                                                                                                                 
+        %                                                                                                                                                                                                     [ B_, SP_ ] = bitCoffee( jab, B_, SP_ );
+        %                                                                                                                                                                                                 
+        %                                                                                                                                                                                                     if( sum(B_) == Q_ )
+        %                                                                                                                                                                                                 
+        %                                                                                                                                                                                                         return
+        %                                                                                                                                                                                                     end
+        % 
                                                                                                                                                                                                             for jaa = STL_(1):1:STU_(1)
 
                                                                                                                                                                                                                 [ B_, SP_ ] = bitCoffee( jaa, B_, SP_ );
@@ -457,8 +457,8 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
                                                                                                                                                                                                                 end                                                                                                            
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
                                                                                                                                                                                                             end
-                                                                                                                                                                                                        % end
-
+                                                                                                                                                                                                            
+        %                                                                                                                                                                                                 end
         %                                                                                                                                                                                             end
         %                                                                                                                                                                                         end
         %                                                                                                                                                                                     end

@@ -1,4 +1,4 @@
-function [ F ] = complexHistogramization( X,Y,Z )
+function [ F ] = compHist( X,Y,Z )
 
     global frameLength classGroups DATARANGE...
         Supervision Randomized

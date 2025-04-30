@@ -22,5 +22,5 @@ function [ F_ ] = histogram( B_, F_ )
 
     % Add NAND / XOR pipeline...
 
-    
+
 end
