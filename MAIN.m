@@ -20,15 +20,15 @@ for Q = ceil(N/2):-1:1
     
         B(1,:) = permn([0;1],N-1,K); K = K + 1;
 
-        % B(3,:) = permn([1;0],N-1,T); T = T - 1; % Slow...
+        B(2,:) = monteCarlo(N,EMAX); 
 
-        B(2,:) = monteCarlo(N,EMAX);        
+        % B(3,:) = permn([1;0],N-1,T); T = T - 1; % Slow...       
 
         % M = (0:1:MOD)';
 
         % B(5,:) = permn(M,N-1,D); D = D + 1;
     
-        if( K == sum(Z(1:N)) )
+        if( K == sum(Z(1:ceil(N/2)))+1 )
     
             break;
         end
@@ -60,7 +60,7 @@ for Q = ceil(N/2):-1:1
     end
     P = 0;
 
-    if( K == sum(Z(1:N)) )
+    if( K == sum(Z(1:ceil(N/2)))+1 )
 
         break;
     end
