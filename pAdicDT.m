@@ -1,4 +1,4 @@
-function [ H_ ] = pAdicDT( N_, B_, S_, RA_, RS_, F_ )
+function [ F_ ] = pAdicDT( N_, B_, S_, RA_, RS_, F_ )
 
      P = 9;
 
@@ -23,7 +23,7 @@ function [ H_ ] = pAdicDT( N_, B_, S_, RA_, RS_, F_ )
                     S_( 1 ) = S_( 1 ) + RA_(ii,jj,k);
                     S_( 2 ) = S_( 2 ) + RS_(ii,jj,k);
 
-                    
+
 
                 end           
         
@@ -130,7 +130,7 @@ function [ H_ ] = pAdicDT( N_, B_, S_, RA_, RS_, F_ )
                 end
             end                       
         end
-        [ H_ ] = sol( S_, F_ );
+        [ F_ ] = sol( S_, F_ );
 
      end
 end
