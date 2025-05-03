@@ -1,4 +1,9 @@
-function [ A_ ] = transHist( X, Y, Z )
+function [ Y_ ] = transHist( X_ )
+
+    
+
+
+    
 
     
     
