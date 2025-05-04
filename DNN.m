@@ -457,7 +457,7 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
                                                                                                                                                                                                                 end                                                                                                            
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
                                                                                                                                                                                                             end
-                                                                                                                                                                                                            
+
         %                                                                                                                                                                                                 end
         %                                                                                                                                                                                             end
         %                                                                                                                                                                                         end
@@ -507,10 +507,6 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
         %         end
         %     end
         % end
-
-
-
-end
 
 
     
