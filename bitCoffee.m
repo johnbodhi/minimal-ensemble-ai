@@ -2,13 +2,13 @@ function  [ B_, SP_ ] = bitCoffee( J_, B_, SP_ )
 
     % Extend to MOD_ > 1    
     
-    if ( B_(J_-1) && ~SP_(B_(J_-1),J_-1) && ~B_(J_) && ~SP_(B_(J_),J_)    )                                                                                                                                                                        
+    if ( B_(J_-1) && ~SP_(B_(J_-1),J_-1) && ~B_(J_) && ~SP_(B_(J_),J_)    )                                                                                                                                                                      
     
         B_(J_)   = B_(J_-1);
         
         B_(J_-1) = 0;
     
-    elseif ( B_(J_-1) && SP_(B_(J_-1),J_-1) && ~B_(J_) && ~SP_(B_(J_),J_) )                                                                                                                                                                                                             
+    elseif ( B_(J_-1) && SP_(B_(J_-1),J_-1) && ~B_(J_) && ~SP_(B_(J_),J_) )                                                                                                                                                                                                          
     
         B_(J_)                = B_(J_-1);
 
@@ -70,4 +70,4 @@ function  [ B_, SP_ ] = bitCoffee( J_, B_, SP_ )
         
         SP_( B_(J_), J_ ) = SP_( B_(J_), J_) - 1;
     
-     end
+    end
