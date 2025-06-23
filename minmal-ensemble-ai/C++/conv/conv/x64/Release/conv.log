@@ -1,0 +1,6 @@
+﻿  conv.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 22 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  conv.vcxproj -> C:\Users\jmgar\OneDrive\Documents\GitHub\minimal-ensemble-ai\minmal-ensemble-ai\C++\conv\x64\Release\conv.exe

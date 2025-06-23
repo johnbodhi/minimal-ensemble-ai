@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jmgar\\OneDrive\\Documents\\GitHub\\minimal-ensemble-ai\\minmal-ensemble-ai\\C\u002B\u002B\\conv\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{15ACE052-9712-42A4-80A5-4A34CD0F4283}|conv\\conv.vcxproj|C:\\Users\\jmgar\\OneDrive\\Documents\\GitHub\\minimal-ensemble-ai\\minmal-ensemble-ai\\C\u002B\u002B\\conv\\conv\\conv.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{15ACE052-9712-42A4-80A5-4A34CD0F4283}|conv\\conv.vcxproj|solutionrelative:conv\\conv.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "conv.cpp",
+              "DocumentMoniker": "C:\\Users\\jmgar\\OneDrive\\Documents\\GitHub\\minimal-ensemble-ai\\minmal-ensemble-ai\\C\u002B\u002B\\conv\\conv\\conv.cpp",
+              "RelativeDocumentMoniker": "conv\\conv.cpp",
+              "ToolTip": "C:\\Users\\jmgar\\OneDrive\\Documents\\GitHub\\minimal-ensemble-ai\\minmal-ensemble-ai\\C\u002B\u002B\\conv\\conv\\conv.cpp",
+              "RelativeToolTip": "conv\\conv.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-22T03:14:35.785Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

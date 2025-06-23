@@ -1,17 +1,4 @@
-function [ A_ ] = transitionHistogramization( X, Y, Z )
-    
-    global frameLength classType classGroups DATARANGE BINS...
-        Supervision Randomized Noise
-
-     if ( Noise )
-    
-        [ X ] = addNoise( X );
-    end 
-
-    if ( Randomized )
-
-        [ X ] = monteCarlo( dataSet ); % Randomize all samples...
-    end
+function [ Y_ ] = transHist( X_ )
 
     
 
@@ -19,4 +6,11 @@ function [ A_ ] = transitionHistogramization( X, Y, Z )
     
 
     
-end
+    
+    
+    
+    
+    
+    
+    
+    
