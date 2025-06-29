@@ -14,7 +14,9 @@ int main()
 
 
 
-    std::cout << "Hello World!\n";
+
+
+    
 
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<microseconds>(stop - start);
