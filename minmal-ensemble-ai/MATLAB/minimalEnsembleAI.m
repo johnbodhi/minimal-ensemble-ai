@@ -69,7 +69,7 @@ RA = zeros(size(classType,2)+BOOST,BINS+BOOST,...
 
 W = zeros(size(RA,1),size(RA,2),size(RA,3)); 
 
-W(1,:,1) = 1e1; 
+W(1,:,1) = 1e1;
 
 W(2,:,1) = 1e2;
 
@@ -79,7 +79,7 @@ W(2,:,1) = 1e2;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[ RA ] = filterOptimization( RA, A_ );
+[ CRA, DRA ] = filterOptimization( CRA, DRA );
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

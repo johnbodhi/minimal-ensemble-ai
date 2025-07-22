@@ -441,28 +441,24 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
         %                                                                                                                                                                                                 for jab = STL_(2):1:STU_(2)
         %                                                                                                                                                                                                 
         %                                                                                                                                                                                                     [ B_, SP_ ] = bitCoffee( jab, B_, SP_ );
+
+        %                                                                                                                                                                                                     L = 49;
         %                                                                                                                                                                                                 
         %                                                                                                                                                                                                     if( sum(B_) == Q_ )
         %                                                                                                                                                                                                 
         %                                                                                                                                                                                                         return
         %                                                                                                                                                                                                     end
         % 
-                                                                                                                                                                                                            for jaa = STL_(1):1:STU_(1)
+                                                                                                                                                                                                              for jaa = STL_(1):1:STU_(1)
+    
+                                                                                                                                                                                                                    [ B_, SP_ ] = bitCoffee( jaa, B_(4,:), SP_, L, V );                                                                                                                                                                                                                
+    
+                                                                                                                                                                                                                    if ( sum(B_(4,:),2) <= Q_ && sum(B_(5,:),2) <= Q_ )
+                                                                                                                                                                                                     
+                                                                                                                                                                                                                        return
+                                                                                                                                                                                                                    end
 
-                                                                                                                                                                                                                [ B_, SP_ ] = bitCoffee( jaa, B_, SP_ );
-
-                                                                                                                                                                                                                if ( sum(B_) == Q_    )
-                                                                                                                                                                                                                
-                                                                                                                                                                                                                    return
-
-                                                                                                                                                                                                                elseif ( sum(B_) < Q_ )
-                                                                                                                                                                                                                       
-                                                                                                                                                                                                                    % return
-                                                                                                                                                                                                                    
-                                                                                                                                                                                                                end                                                                                                           
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-                                                                                                                                                                                                            end
-
+                                                                                                                                                                                                              end
         %                                                                                                                                                                                                 end
         %                                                                                                                                                                                             end
         %                                                                                                                                                                                         end
@@ -512,6 +508,3 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
         %         end
         %     end
         % end
-
-
-    

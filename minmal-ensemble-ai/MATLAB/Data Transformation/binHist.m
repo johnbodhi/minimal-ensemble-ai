@@ -1,4 +1,4 @@
-function [ F_ ] = histogram( B_, F_ )
+function [ F_ ] = binHist( B_, F_ )
 
     for i = 1:1:size(B_,1)
 
@@ -19,8 +19,4 @@ function [ F_ ] = histogram( B_, F_ )
     % F_(1,:) = F_(1,:) ./ K_;
     % F_(2,:) = F_(2,:) ./ sum(F_(2,:),2);
 
-
     % Add NAND / XOR pipeline...
-
-
-end

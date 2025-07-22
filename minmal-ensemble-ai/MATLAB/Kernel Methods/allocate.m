@@ -1,4 +1,4 @@
-function [ F_, B_, STT_, SP_ ] = allocate( Q_, MOD_, B_ )
+function [ F_, B_, STL_, STU_, SP_ ] = allocate( Q_, MOD_, B_ )
 
     DATARANGE  = size(B_,2);
 

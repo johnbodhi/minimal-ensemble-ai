@@ -8,7 +8,7 @@ Z = diag(flip(pascal(N),2));
 
 EMAX = log(sum(Z(1:ceil(N/2)))) / log( 2 ); % T = sym(2^EMAX);
 
-K = 1; P = 0; % MOD = 1; 
+K = 1; P = 0; % MOD = 1; % M = (0:1:MOD)';
 
 F = [ -1 10000 ];
 
@@ -24,13 +24,11 @@ for Q = ceil(N/2):-1:1
 
         % B(3,:) = permn([1;0],N-1,T); T = T - 1; % Slow...       
 
-        % M = (0:1:MOD)';
-
-        % B(5,:) = permn(M,N-1,D); D = D + 1;
+        % B(4,:) = permn(M,N-1,D); D = D + 1;
     
-        if( K == sum(Z(1:ceil(N/2)))+1 )
+        if ( K == sum( Z(1:ceil(N/2)) ) + 1 )
     
-            break;
+            break
         end
 
         if( sum(B(1,:)) == Q-1 )
@@ -43,18 +41,20 @@ for Q = ceil(N/2):-1:1
         %     [ ~, B, STL, STU, SP ] = allocate( Q, MOD, B );
         % end        
 
-        % [ B(4,:), STL, STU, SP ] = DNN( N, Q, B(3,:), STL, STU, SP );
+        % [ B(4:5,:), STL, STU, SP ] = DNN( N, Q, B(4,:), STL, STU, SP );
 
         % if ( A )
         % 
         %    [ F, ~, ~, ~ ] = allocate( Q, MOD, B ); A = 0;
         % end
 
-        % [ F ] = histogram( B, F );
+        % [ F ] = binHist( B, F );
 
-        if( sum(B(1,:)) < ceil(N/2) && sum(B(2,:)) < ceil(N/2) )
+        if( sum(B(1,:)) < ceil(N/2) && sum(B(2,:)) < ceil(N/2) &&...
+                sum(B(3,:)) < ceil(N/2) && sum(B(4,:)) < ceil(N/2) &&...
+                sum(B(5,:)) < ceil(N/2) )
     
-            [ F ] = pAdicDT( N, B, RA, RS, F );
+                [ F ] = pAdicDT( N, B, RA, RS, F );
         end
     
     end
@@ -62,7 +62,7 @@ for Q = ceil(N/2):-1:1
 
     if( K == sum(Z(1:ceil(N/2)))+1 )
 
-        break;
+        break
     end
 
 end
