@@ -2,7 +2,18 @@ clear all; close all; clc; tic;
 
 N = 100;
 
-[ RA, RS ] = trellis(); 
+[ RA, RS ] = trellis();
+
+% Fold half of half etc... Overlap lower value directive with higher valued
+% directives in the same leaf? p-Adic directives and p-Adic directed geometry!
+
+% j-directed in (i,j,k,l,...M) dimensions! We are learning the shape of
+% leafs in 1-N dimensions, and folding the geometry toward higher density
+% segments to embed p-adic directives in the data structures swept out by the
+% combinations defining the directed modulus.
+
+% The DNN will sweep the folded structure linearly forward and backward,
+% and populate the p-adic search automatically.
 
 Z = diag(flip(pascal(N),2));
 

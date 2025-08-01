@@ -4,6 +4,10 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
 
         C(1,INF+1:1:N_+SUP-1) = B_;
         
+        % The convolutional length is the same for each observation in a
+        % complete linear dyadic search.
+
+
         % for jbx = STT_(49):1:N_-51
         % 
         %     [ B_, SP_ ] = bitCoffee( jbx, B_, SP_ );
@@ -450,13 +454,20 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
         %                                                                                                                                                                                                     end
         % 
                                                                                                                                                                                                               for jaa = STL_(1):1:STU_(1)
+
+                                                                                                                                                                                                                % Extend to MOD_ > 1 -> [0,...,N]   
+
+                                                                                                                                                                                                                % Extend objective function SP_ slices as minimizer: 
+                                                                                                                                                                                                                % Bit position, Bit value, Bit accumulator, Bit index, 
+                                                                                                                                                                                                                % Convolution range values, Convolutional range
+                                                                                                                                                                                                                % indexes, Vector nest index, Vector nest column operation output value
     
-                                                                                                                                                                                                                    [ B_, SP_ ] = bitCoffee( jaa, B_(4,:), SP_, L, V );                                                                                                                                                                                                                
-    
-                                                                                                                                                                                                                    if ( sum(B_(4,:),2) <= Q_ && sum(B_(5,:),2) <= Q_ )
-                                                                                                                                                                                                     
-                                                                                                                                                                                                                        return
-                                                                                                                                                                                                                    end
+                                                                                                                                                                                                                [ B_, SP_ ] = bitCoffee( jaa, B_(4,:), SP_ );                                                                                                                                                                                                                
+
+                                                                                                                                                                                                                if ( sum(B_(4,:),2) <= Q_ && sum(B_(5,:),2) <= Q_ )
+                                                                                                                                                                                                 
+                                                                                                                                                                                                                    return
+                                                                                                                                                                                                                end
 
                                                                                                                                                                                                               end
         %                                                                                                                                                                                                 end
