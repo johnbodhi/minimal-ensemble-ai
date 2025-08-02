@@ -1,8 +1,8 @@
-function [ RA, RS, D ] = trellis()
+function [ RA, RS, RAF, RSF, N ] = trellis()
     
     % A = readmatrix("C:\Users\jmgar\OneDrive\Documents\GitHub\project-euler\Project_Euler_Problem_67\MaximumPathSumII\MaximumPathSumII\Matrices\triangle_tiny.csv");
-    % A = readmatrix("C:\Users\jmgar\OneDrive\Documents\GitHub\project-euler\Project_Euler_Problem_67\MaximumPathSumII\MaximumPathSumII\Matrices\triangle_small.csv"); 
-    A = readmatrix("C:\Users\jmgar\OneDrive\Documents\GitHub\project-euler\Project_Euler_Problem_67\MaximumPathSumII\MaximumPathSumII\Matrices\triangle_large.csv");    
+    A = readmatrix("C:\Users\jmgar\OneDrive\Documents\GitHub\project-euler\Project_Euler_Problem_67\MaximumPathSumII\MaximumPathSumII\Matrices\triangle_small.csv"); 
+    % A = readmatrix("C:\Users\jmgar\OneDrive\Documents\GitHub\project-euler\Project_Euler_Problem_67\MaximumPathSumII\MaximumPathSumII\Matrices\triangle_large.csv");    
     
     N = size(A,1); M = size(A,2);
 
@@ -20,8 +20,8 @@ function [ RA, RS, D ] = trellis()
     A = A';
     %}
    
-    AS = zeros(size(A,1),size(A,2));
-    for i = 1:1:size(A,1)
+    AS = zeros(N,M);
+    for i = 1:1:N
 
         AS(i,1:i) = flip(A(i,1:i),2);
     end
@@ -29,7 +29,7 @@ function [ RA, RS, D ] = trellis()
     A  = A';
     AS = AS';
 
-    D = zeros( size(A,1), size(A,2), size(A,1) );
+    D = zeros( N, M, N );
 
     % for k = size( D, 3 ):-1:1
     %     for j = 1:1:size( D, 2 )
@@ -67,18 +67,19 @@ function [ RA, RS, D ] = trellis()
     %                 end
     % 
     %             end
+    % 
     %         end
     %     end
     % end
+    % 
+    %  save("D.mat","D");
 
-    % save("D.mat","D");
-     
     D = load("D.mat"); D = D.D;
     
     D = flip(D,2);
     
-    RA = zeros(N,M); 
-    RS = zeros(N,M);
+    RA  = zeros(N,M);
+    RS  = zeros(N,M);
     
     for k = 1:ceil(size(D,3)/2)
         for j = 1:size(D,2)
@@ -94,7 +95,12 @@ function [ RA, RS, D ] = trellis()
             end
         end
     end
-    RA = circshift(RA,1,1);
-    RS = circshift(RS,1,1);
-    
+
+    RA  = circshift(RA,1,1);
+    RAF = flip(RA,2);
+    RAF = swap(RAF);
+
+    RS  = circshift(RS,1,1);
+    RSF = flip(RS,2);
+    RSF = swap(RSF);
 end

@@ -2,7 +2,7 @@ clear all; close all; clc; tic;
 
 N = 100;
 
-[ RA, RS ] = trellis();
+[ RA, RS, RAF, RSF, N ] = trellis();
 
 % Fold half of half etc... Overlap lower value directive with higher valued
 % directives in the same leaf? p-Adic directives and p-Adic directed geometry!
@@ -15,9 +15,11 @@ N = 100;
 % The DNN will sweep the folded structure linearly forward and backward,
 % and populate the p-adic search automatically.
 
-Z = diag(flip(pascal(N),2));
+Z = ceil(diag(flip(pascal(N),2))./2); 
 
-EMAX = log(sum(Z(1:ceil(N/2)))) / log( 2 ); % T = sym(2^EMAX);
+Z = Z(1:ceil(N/2));
+
+% EMAX = log(sum(Z,1)) / log( 2 ); % T = sym(2^EMAX);
 
 K = 1; P = 0; % MOD = 1; % M = (0:1:MOD)';
 
@@ -31,7 +33,7 @@ for Q = ceil(N/2):-1:1
     
         B(1,:) = permn([0;1],N-1,K); K = K + 1;
 
-        B(2,:) = monteCarlo(N,EMAX);
+        % B(2,:) = monteCarlo(N,EMAX);
 
         % B(3,:) = permn([1;0],N-1,T); T = T - 1; % Slow...       
 
@@ -61,9 +63,7 @@ for Q = ceil(N/2):-1:1
 
         % [ F ] = binHist( B, F );
 
-        if( sum(B(1,:)) < ceil(N/2) && sum(B(2,:)) < ceil(N/2) &&...
-                sum(B(3,:)) < ceil(N/2) && sum(B(4,:)) < ceil(N/2) &&...
-                sum(B(5,:)) < ceil(N/2) )
+        if( sum(B(1,:)) < ceil(N/2) && sum(B(2,:)) < ceil(N/2) )
     
                 [ F ] = pAdicDT( N, B, RA, RS, F );
         end
