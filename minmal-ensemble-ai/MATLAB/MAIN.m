@@ -1,7 +1,5 @@
 clear all; close all; clc; tic;
 
-N = 100;
-
 [ RA, RS, RAF, RSF, N ] = trellis();
 
 % Fold half of half etc... Overlap lower value directive with higher valued
@@ -21,7 +19,9 @@ Z = Z(1:ceil(N/2));
 
 % EMAX = log(sum(Z,1)) / log( 2 ); % T = sym(2^EMAX);
 
-K = 1; P = 0; % MOD = 1; % M = (0:1:MOD)';
+K = 1; P = 0; 
+
+MOD = 1; % M = (0:1:MOD)';
 
 F = [ -1 10000 ];
 

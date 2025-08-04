@@ -2,7 +2,7 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
 
         INF = 10; SUP = 10; C = zeros(1,INF+SUP+N_);
 
-        C(1,INF+1:1:N_+SUP-1) = B_;
+        C(1:size(B_,1),INF+1:1:N_+SUP-1) = B_;
         
         % The convolutional length is the same for each observation in a
         % complete linear dyadic search.
@@ -458,9 +458,10 @@ function [ B_, STL_, STU_, SP_ ] = DNN( N_, Q_, B_, STL_, STU_, SP_ )
                                                                                                                                                                                                                 % Extend to MOD_ > 1 -> [0,...,N]   
 
                                                                                                                                                                                                                 % Extend objective function SP_ slices as minimizer: 
-                                                                                                                                                                                                                % Bit position, Bit value, Bit accumulator, Bit index, 
-                                                                                                                                                                                                                % Convolution range values, Convolutional range
-                                                                                                                                                                                                                % indexes, Vector nest index, Vector nest column operation output value
+                                                                                                                                                                                                                % bit position, Bit value, bit accumulator, bit index, 
+                                                                                                                                                                                                                % convolution range values, convolutional range
+                                                                                                                                                                                                                % indexes, vector nest index, 
+                                                                                                                                                                                                                % vector nest column operation output value
     
                                                                                                                                                                                                                 [ B_, SP_ ] = bitCoffee( jaa, B_(4,:), SP_ );                                                                                                                                                                                                                
 
