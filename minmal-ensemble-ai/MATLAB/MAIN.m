@@ -33,7 +33,7 @@ for Q = ceil(N/2):-1:1
     
         B(1,:) = permn([0;1],N-1,K); K = K + 1;
 
-        % B(2,:) = monteCarlo(N,EMAX);
+        B(2,:) = monteCarlo(N,EMAX);
 
         % B(3,:) = permn([1;0],N-1,T); T = T - 1; % Slow...       
 
@@ -75,6 +75,5 @@ for Q = ceil(N/2):-1:1
 
         break
     end
-
 end
 toc;

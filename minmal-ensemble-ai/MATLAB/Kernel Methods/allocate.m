@@ -8,7 +8,7 @@ function [ F_, B_, STL_, STU_, SP_ ] = allocate( Q_, MOD_, B_ )
 
     % We sweep i, and Q to generate bit map.
 
-    B_(3,1:Q_) = permn( (MOD_:-1:0)', Q_, 1 );
+    B_(3,1:Q_) = permn( (0:1:MOD_)', Q_, 1 );
     
     STL_       = (Q_:-1:1)';
 

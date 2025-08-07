@@ -239,7 +239,7 @@ for jaz = STT_(25):1:N_-27
                                                                                                     for jaa = STL_(1):1:STU_(1)
         
                                                                                                     % Extend to MOD_ > 1 -> [0,...,N]   
-                                                                                                    % 
+                                                                                                    
                                                                                                     % Extend objective function SP_ slices as minimizer: 
                                                                                                     % bit position, Bit value, bit accumulator, bit index, 
                                                                                                     % convolution range values, convolutional range
