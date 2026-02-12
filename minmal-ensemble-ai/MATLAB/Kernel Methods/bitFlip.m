@@ -1,5 +1,12 @@
 function  [B_,SP_] = bitFlip(J_,B_,STL_,STU_,SP_,SPNC_,SPC_)
 
+    % Extend to MOD_ > 1 -> [0,...,N]   
+
+    % Extend objectve function SP_ block as minimizer: 
+    % Bit position index (emission), Bit value, Accumulated SP_ values, emission
+    % values, Convolution range values, Convolutional range
+    % indexes, Logic layer index value, Logic layer column operation output value )
+
         M_        = size(B_,2)                                                                   ;
 
         % [MX_,IX_] = max(SP_,[],'linear')                                                       ;
